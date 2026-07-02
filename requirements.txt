@@ -1,0 +1,6 @@
+basic-pitch>=0.3.0
+torch>=2.0
+onnxruntime  # basic-pitch's bundled TF SavedModel doesn't load on TF 2.16+; use ONNX backend instead
+numpy
+setuptools<81  # newer setuptools drops pkg_resources, which resampy (a basic-pitch dep) needs
+scipy<1.13  # basic-pitch calls scipy.signal.gaussian, removed in scipy 1.13

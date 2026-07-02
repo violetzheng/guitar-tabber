@@ -1,2 +1,4 @@
-.venv 
-.claude 
+.venv
+.claude
+__pycache__
+policy.pt

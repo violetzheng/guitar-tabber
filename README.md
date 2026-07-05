@@ -11,29 +11,33 @@ python3 -m venv .venv
 
 ## Usage
 
-```bash
-.venv/bin/python note_events.py path/to/solo.wav
-```
-
-This writes `path/to/solo.notes.json` containing a list of note events:
-
-```json
-[
-  {
-    "onset": 0.01,
-    "offset": 0.38,
-    "midi_pitches": [40],
-    "confidence": 0.59
-  }
-]
-```
-
-- `onset` / `offset` — note start/end time in seconds
-- `midi_pitches` — one or more MIDI pitches (more than one means a chord/double-stop)
-- `confidence` — model confidence (0-1)
-
-Use `-o`/`--output` to choose a different output path:
+**Step 1 — Extract notes from audio**
 
 ```bash
-.venv/bin/python note_events.py path/to/solo.wav -o notes.json
+.venv/bin/python note_events.py example_data/example1_amp1.wav
 ```
+
+Writes `example_data/example1_amp1.notes.json`.
+
+**Step 2 — Assign string/fret positions**
+using a trained policy
+```bash
+.venv/bin/python assign_tabs.py example_data/example1_amp1.notes.json policy.pt --tab
+```
+
+Writes `example_data/example1_amp1.notes.tabs.json`. `--tab` also prints an ASCII tab and opens a PDF preview. Use `--downtune N` if the recording is tuned down N semitones from standard.
+
+## Training
+
+Train a new policy on a notes JSON file:
+
+```bash
+.venv/bin/python train_rl.py example_data/example1_amp1.notes.json
+```
+
+Saves `policy.pt`. Options:
+
+| Flag | Default | Description |
+|------|---------|-------------|
+| `-o` | `policy.pt` | Output path for the saved policy |
+| `--iterations` | `300` | Number of PPO training iterations |

@@ -45,6 +45,16 @@ def rhythm_scale(time_delta_s: float) -> float:
     return 0.5 + 0.5 * (clamped - 0.1) / 0.4
 
 
+def same_string_urgency(time_delta_s: float) -> float:
+    """[0, 1] — how strongly to prefer same-string for this transition.
+
+    1.0 when Δt ≤ 0.1 s (≈ 16th notes at 150 BPM, physically hard to cross strings),
+    0.0 when Δt ≥ 0.5 s (plenty of time to reposition).
+    """
+    clamped = max(0.1, min(time_delta_s, 0.5))
+    return 1.0 - (clamped - 0.1) / 0.4
+
+
 def transition_reward(
     from_str: int,
     from_fret: int,
@@ -54,14 +64,20 @@ def transition_reward(
 ) -> float:
     """Combined playability reward for one note transition. Range: [0, 1].
 
-    Weights (sum to 1.0):
-      0.50 distance     — fret-jump size between consecutive notes
-      0.30 string_change — cross-string move quality
-      0.20 neck_position — absolute fret height on the destination note
-    All three are then scaled by rhythm (faster notes = harsher penalty for bad choices).
+    Weights shift as a function of inter-note timing (sum always = 1.0):
+      urgency=0 (slow, Δt ≥ 0.5 s): distance 0.50 / string_change 0.30 / neck 0.20
+      urgency=1 (fast, Δt ≤ 0.1 s): distance 0.20 / string_change 0.60 / neck 0.20
+
+    Fast passages need the picking hand on the same string; weight string_change
+    heavily so the policy learns to stay put rather than hopping strings.
+    All three components are then scaled by rhythm_scale.
     """
     d = distance_score(from_fret, to_fret)
     s = string_change_score(from_str, from_fret, to_str, to_fret)
     n = neck_position_score(to_fret)
     r = rhythm_scale(time_delta_s)
-    return (0.5 * d + 0.3 * s + 0.2 * n) * r
+    u = same_string_urgency(time_delta_s)
+    w_d = 0.35 - 0.30 * u   # 0.35 → 0.05
+    w_s = 0.30 + 0.30 * u   # 0.30 → 0.60
+    w_n = 0.35               # raised from 0.20 to prefer lower fret positions
+    return (w_d * d + w_s * s + w_n * n) * r

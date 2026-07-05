@@ -1,0 +1,415 @@
+[
+  {
+    "onset": 2.125909750566893,
+    "offset": 2.369719274376417,
+    "midi_pitch": 67,
+    "string": 1,
+    "fret": 3
+  },
+  {
+    "onset": 2.358109297052154,
+    "offset": 2.671578684807256,
+    "midi_pitch": 69,
+    "string": 1,
+    "fret": 5
+  },
+  {
+    "onset": 2.671578684807256,
+    "offset": 4.228599546485261,
+    "midi_pitch": 69,
+    "string": 1,
+    "fret": 5
+  },
+  {
+    "onset": 3.890626303854875,
+    "offset": 4.019619954648526,
+    "midi_pitch": 56,
+    "string": 3,
+    "fret": 1
+  },
+  {
+    "onset": 4.077669841269841,
+    "offset": 4.356309297052154,
+    "midi_pitch": 56,
+    "string": 3,
+    "fret": 1
+  },
+  {
+    "onset": 4.484019047619047,
+    "offset": 5.076127891156462,
+    "midi_pitch": 69,
+    "string": 1,
+    "fret": 5
+  },
+  {
+    "onset": 5.528917006802721,
+    "offset": 5.67984671201814,
+    "midi_pitch": 72,
+    "string": 1,
+    "fret": 8
+  },
+  {
+    "onset": 5.691456689342403,
+    "offset": 5.982990022675737,
+    "midi_pitch": 72,
+    "string": 1,
+    "fret": 8
+  },
+  {
+    "onset": 6.029429931972789,
+    "offset": 8.178559637188208,
+    "midi_pitch": 69,
+    "string": 1,
+    "fret": 5
+  },
+  {
+    "onset": 8.747448526077097,
+    "offset": 9.072527891156462,
+    "midi_pitch": 72,
+    "string": 1,
+    "fret": 8
+  },
+  {
+    "onset": 8.921598185941043,
+    "offset": 9.362777324263039,
+    "midi_pitch": 74,
+    "string": 1,
+    "fret": 10
+  },
+  {
+    "onset": 9.362777324263039,
+    "offset": 11.47707709750567,
+    "midi_pitch": 76,
+    "string": 1,
+    "fret": 12
+  },
+  {
+    "onset": 11.47707709750567,
+    "offset": 12.534868934240363,
+    "midi_pitch": 76,
+    "string": 1,
+    "fret": 12
+  },
+  {
+    "onset": 12.453599092970522,
+    "offset": 12.60452879818594,
+    "midi_pitch": 79,
+    "string": 1,
+    "fret": 15
+  },
+  {
+    "onset": 12.616138775510205,
+    "offset": 14.695608616780046,
+    "midi_pitch": 79,
+    "string": 1,
+    "fret": 15
+  },
+  {
+    "onset": 12.836728344671203,
+    "offset": 15.078737868480726,
+    "midi_pitch": 76,
+    "string": 1,
+    "fret": 12
+  },
+  {
+    "onset": 15.450257142857142,
+    "offset": 15.775336507936508,
+    "midi_pitch": 79,
+    "string": 1,
+    "fret": 15
+  },
+  {
+    "onset": 15.879826303854875,
+    "offset": 16.21779954648526,
+    "midi_pitch": 81,
+    "string": 1,
+    "fret": 17
+  },
+  {
+    "onset": 16.275849433106576,
+    "offset": 16.48482902494331,
+    "midi_pitch": 79,
+    "string": 2,
+    "fret": 20
+  },
+  {
+    "onset": 16.380339229024944,
+    "offset": 19.690466666666666,
+    "midi_pitch": 81,
+    "string": 1,
+    "fret": 17
+  },
+  {
+    "onset": 19.853006349206346,
+    "offset": 21.340367346938777,
+    "midi_pitch": 81,
+    "string": 2,
+    "fret": 22
+  },
+  {
+    "onset": 21.340367346938777,
+    "offset": 21.68866666666667,
+    "midi_pitch": 82,
+    "string": 1,
+    "fret": 18
+  },
+  {
+    "onset": 21.711886621315195,
+    "offset": 22.061469841269844,
+    "midi_pitch": 83,
+    "string": 1,
+    "fret": 19
+  },
+  {
+    "onset": 22.224009523809524,
+    "offset": 22.955438095238097,
+    "midi_pitch": 83,
+    "string": 1,
+    "fret": 19
+  },
+  {
+    "onset": 23.489497052154196,
+    "offset": 23.826186394557823,
+    "midi_pitch": 81,
+    "string": 1,
+    "fret": 17
+  },
+  {
+    "onset": 23.69847664399093,
+    "offset": 23.908740136054423,
+    "midi_pitch": 79,
+    "string": 1,
+    "fret": 15
+  },
+  {
+    "onset": 23.920350113378685,
+    "offset": 24.640168707482992,
+    "midi_pitch": 76,
+    "string": 1,
+    "fret": 12
+  },
+  {
+    "onset": 24.605338775510205,
+    "offset": 26.499048979591837,
+    "midi_pitch": 81,
+    "string": 1,
+    "fret": 17
+  },
+  {
+    "onset": 26.533878911564624,
+    "offset": 27.218867573696144,
+    "midi_pitch": 76,
+    "string": 1,
+    "fret": 12
+  },
+  {
+    "onset": 27.218867573696144,
+    "offset": 27.916750113378683,
+    "midi_pitch": 76,
+    "string": 1,
+    "fret": 12
+  },
+  {
+    "onset": 27.916750113378683,
+    "offset": 29.07774784580499,
+    "midi_pitch": 76,
+    "string": 1,
+    "fret": 12
+  },
+  {
+    "onset": 29.147407709750567,
+    "offset": 29.367997278911563,
+    "midi_pitch": 74,
+    "string": 1,
+    "fret": 10
+  },
+  {
+    "onset": 29.611806802721087,
+    "offset": 29.77434648526077,
+    "midi_pitch": 75,
+    "string": 1,
+    "fret": 11
+  },
+  {
+    "onset": 29.77434648526077,
+    "offset": 29.90334013605442,
+    "midi_pitch": 75,
+    "string": 1,
+    "fret": 11
+  },
+  {
+    "onset": 29.996219954648524,
+    "offset": 30.298079365079364,
+    "midi_pitch": 72,
+    "string": 1,
+    "fret": 8
+  },
+  {
+    "onset": 30.181979591836733,
+    "offset": 30.518668934240363,
+    "midi_pitch": 74,
+    "string": 1,
+    "fret": 10
+  },
+  {
+    "onset": 30.518668934240363,
+    "offset": 32.8187283446712,
+    "midi_pitch": 74,
+    "string": 1,
+    "fret": 10
+  },
+  {
+    "onset": 32.80711836734694,
+    "offset": 33.79525034013606,
+    "midi_pitch": 74,
+    "string": 1,
+    "fret": 10
+  },
+  {
+    "onset": 36.95444807256236,
+    "offset": 37.221477551020406,
+    "midi_pitch": 67,
+    "string": 1,
+    "fret": 3
+  },
+  {
+    "onset": 37.16342766439909,
+    "offset": 39.4402671201814,
+    "midi_pitch": 69,
+    "string": 1,
+    "fret": 5
+  },
+  {
+    "onset": 40.78830839002268,
+    "offset": 43.552766893424035,
+    "midi_pitch": 76,
+    "string": 1,
+    "fret": 12
+  },
+  {
+    "onset": 43.890740136054426,
+    "offset": 44.13454965986395,
+    "midi_pitch": 72,
+    "string": 1,
+    "fret": 8
+  },
+  {
+    "onset": 44.00683990929706,
+    "offset": 44.25064943310658,
+    "midi_pitch": 74,
+    "string": 1,
+    "fret": 10
+  },
+  {
+    "onset": 44.13454965986395,
+    "offset": 49.32677732426304,
+    "midi_pitch": 72,
+    "string": 1,
+    "fret": 8
+  },
+  {
+    "onset": 50.8954081632653,
+    "offset": 53.34639727891157,
+    "midi_pitch": 69,
+    "string": 1,
+    "fret": 5
+  },
+  {
+    "onset": 53.93979002267574,
+    "offset": 54.24164943310658,
+    "midi_pitch": 75,
+    "string": 1,
+    "fret": 11
+  },
+  {
+    "onset": 54.24164943310658,
+    "offset": 54.485458956916105,
+    "midi_pitch": 74,
+    "string": 1,
+    "fret": 10
+  },
+  {
+    "onset": 54.369359183673474,
+    "offset": 54.613168707483,
+    "midi_pitch": 72,
+    "string": 1,
+    "fret": 8
+  },
+  {
+    "onset": 54.578338775510204,
+    "offset": 56.982887981859406,
+    "midi_pitch": 69,
+    "string": 1,
+    "fret": 5
+  },
+  {
+    "onset": 57.51694693877551,
+    "offset": 57.66916054421769,
+    "midi_pitch": 69,
+    "string": 1,
+    "fret": 5
+  },
+  {
+    "onset": 57.66916054421769,
+    "offset": 57.866530158730164,
+    "midi_pitch": 69,
+    "string": 1,
+    "fret": 5
+  },
+  {
+    "onset": 57.866530158730164,
+    "offset": 58.029069841269845,
+    "midi_pitch": 69,
+    "string": 1,
+    "fret": 5
+  },
+  {
+    "onset": 58.029069841269845,
+    "offset": 58.191609523809525,
+    "midi_pitch": 69,
+    "string": 1,
+    "fret": 5
+  },
+  {
+    "onset": 58.191609523809525,
+    "offset": 58.89981814058957,
+    "midi_pitch": 69,
+    "string": 1,
+    "fret": 5
+  },
+  {
+    "onset": 58.911428117913836,
+    "offset": 59.08557777777778,
+    "midi_pitch": 68,
+    "string": 1,
+    "fret": 4
+  },
+  {
+    "onset": 59.48031700680272,
+    "offset": 60.05048979591837,
+    "midi_pitch": 69,
+    "string": 1,
+    "fret": 5
+  },
+  {
+    "onset": 60.56132879818594,
+    "offset": 60.78191836734694,
+    "midi_pitch": 52,
+    "string": 4,
+    "fret": 2
+  },
+  {
+    "onset": 60.87479818594104,
+    "offset": 61.16504761904762,
+    "midi_pitch": 68,
+    "string": 1,
+    "fret": 4
+  },
+  {
+    "onset": 61.28114739229025,
+    "offset": 61.87454013605442,
+    "midi_pitch": 52,
+    "string": 4,
+    "fret": 2
+  }
+]

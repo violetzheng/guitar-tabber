@@ -1,8 +1,8 @@
-"""Parse a DadaGP-tokenized GuitarPro export (e.g. example1.txt) into ground-truth
+"""Parse a DadaGP-tokenized GuitarPro export (e.g. example_data/example1.txt) into ground-truth
 note events, in the same onset/offset/midi_pitches shape note_events.py produces,
 so the two can be compared.
 
-Assumptions (validated against example1_amp1.notes.json's first detected note):
+Assumptions (validated against example_data/example1_amp1.notes.json's first detected note):
   - tick resolution is 960 per quarter note (wait values are multiples of this)
   - strings are numbered s1 (high e) .. s6 (low E), standard tuning
   - downtune:N shifts every open string down N semitones

@@ -18,6 +18,10 @@ from reward import transition_reward
 STANDARD_TUNING = {1: 64, 2: 59, 3: 55, 4: 50, 5: 45, 6: 40}  # s1=high e .. s6=low E
 MAX_FRET = 22
 MAX_CANDIDATES = 6   # fixed action-space width; invalid slots are masked
+
+_OPEN_STRING_PITCHES = frozenset(STANDARD_TUNING.values())
+_RESONANCE_SEMITONE_THRESHOLD = 12
+_RESONANCE_LOOKAHEAD_S = 0.5  # flag open-string notes that start within this window after a high note ends
 K = 4                # lookahead window (current note + K-1 future notes)
 STATE_DIM = 2 + K + K + 1  # 11
 
@@ -36,16 +40,29 @@ class GuitarTabEnv:
     def __init__(self, note_events: list[dict], downtune: int = 0):
         self.downtune = downtune
 
-        # Flatten chords: take the highest pitch (melody note).
+        # Flatten chords: take the highest pitch that has at least one playable
+        # position on the guitar.  If every pitch in the event is out of range
+        # (e.g. a pitch-detection artefact above fret 22 on the high-e string)
+        # the note is skipped with a warning.
         self.notes: list[dict] = []
         for e in note_events:
             pitches = sorted(e.get("midi_pitches", []), reverse=True)
-            if not pitches:
+            chosen = None
+            for p in pitches:
+                if get_candidates(p, downtune):
+                    chosen = p
+                    break
+            if chosen is None:
+                import warnings
+                warnings.warn(
+                    f"No playable position for pitches {pitches} at "
+                    f"t={e.get('onset', '?'):.3f}s — note skipped."
+                )
                 continue
             self.notes.append({
                 "onset": float(e["onset"]),
                 "offset": float(e["offset"]),
-                "midi_pitch": pitches[0],
+                "midi_pitch": chosen,
             })
 
         # Pre-compute candidates and validity masks for every note.
@@ -135,4 +152,30 @@ class GuitarTabEnv:
     def from_json(cls, path: str, downtune: int = 0) -> "GuitarTabEnv":
         with open(path) as f:
             events = json.load(f)
-        return cls(events, downtune)
+        return cls(_filter_resonance_artifacts(events), downtune)
+
+
+def _filter_resonance_artifacts(events: list[dict]) -> list[dict]:
+    """Drop open-string events caused by sympathetic resonance or string decay.
+
+    An event is removed when every pitch it contains is an open-string pitch
+    (MIDI 40/45/50/55/59/64) AND a note at least 12 semitones higher was
+    either still sustaining or ended within RESONANCE_LOOKAHEAD_S seconds
+    before this event began.
+    """
+    keep = []
+    for i, ev in enumerate(events):
+        pitches = ev.get("midi_pitches", [])
+        if not all(p in _OPEN_STRING_PITCHES for p in pitches):
+            keep.append(ev)
+            continue
+        is_resonance = any(
+            j != i
+            and other["onset"] <= ev["onset"]
+            and other["offset"] + _RESONANCE_LOOKAHEAD_S >= ev["onset"]
+            and max(other.get("midi_pitches", [0])) - min(pitches) >= _RESONANCE_SEMITONE_THRESHOLD
+            for j, other in enumerate(events)
+        )
+        if not is_resonance:
+            keep.append(ev)
+    return keep

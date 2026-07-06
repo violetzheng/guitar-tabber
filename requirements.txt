@@ -1,4 +1,6 @@
 basic-pitch>=0.3.0
+demucs
+PyGuitarPro
 torch>=2.0
 onnxruntime  # basic-pitch's bundled TF SavedModel doesn't load on TF 2.16+; use ONNX backend instead
 numpy

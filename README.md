@@ -17,7 +17,7 @@ python3 -m venv .venv
 .venv/bin/python note_events.py example_data/example1_amp1.wav
 ```
 
-Writes `example_data/example1_amp1.notes.json`.
+Writes to `example_data/example1_amp1.notes.json`.
 
 **Step 2 — Assign string/fret positions**
 using a trained policy

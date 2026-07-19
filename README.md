@@ -37,14 +37,14 @@ Writes `<name>.notes.json`. The first run with `--separate` downloads the `htdem
 
 Writes three output files:
 
-`.notes.tabs.json` Per-note assignments with string, fret, and technique 
-`.notes.tabs.pdf` Paginated ASCII tab 
+`.notes.tabs.json` Per-note assignments with string, fret, and technique \\
+`.notes.tabs.pdf` Paginated ASCII tab \\
 `.notes.tabs.gp5` Guitar Pro 5 file with hammer-ons, pull-offs, and slides
 
 **CLI flags:**
 
-`--tab` Print prettified ASCII tab and export to PDF + GP5 format
-`--bpm N` Tempo for the GP5 file (default: 120) 
+`--tab` Print prettified ASCII tab and export to PDF + GP5 format \\
+`--bpm N` Tempo for the GP5 file (default: 120) \\
 `--downtune N` Recording is tuned down N semitones from standard 
 
 ## Training
@@ -56,5 +56,5 @@ Train a new policy on a notes JSON file:
 
 Exports policy to `policy.pt`. Additional options:
 
-`-o` | `policy.pt` | Output path for the saved policy 
+`-o` | `policy.pt` | Output path for the saved policy \\
 `--iterations` | `300` Number of PPO training iterations 
